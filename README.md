@@ -2,6 +2,12 @@
 
 [![Build Status](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicWQ5eWpKUWF6RzhOWlVCNWw2d2FUUU1ITUVyandmakJNU2oxbTNzRnhzOFltaUhWdGNMTG5FS0VVd1dLZS8yZS9iQUFJZ1pvNjYzbXRxdGE1cytxNUIwPSIsIml2UGFyYW1ldGVyU3BlYyI6IldxY3NJZWlOL2IyT2RSUEkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)](https://ap-northeast-1.console.aws.amazon.com/codesuite/codebuild/projects/codebuild)
 
+### AWS CodeBuildで状況に応じて処理を分けるため、いろんな場合の環境変数を細かく調査した
+https://qiita.com/mocaberos/items/ebd77d5b8b0952e8bdf9
+### 調査方法
+buildspec.ymlでCodeBuildのデフォルトの環境変数がいろんな場面のどのような値になるかを調べるため、
+CodeBuildを連携させたgithubリポジトリで様々な操作を行い、結果を記録しました。
+
 ## masterブランチに直接pushした場合
 ```text
 AWS_DEFAULT_REGION:                 ap-northeast-1
