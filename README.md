@@ -117,3 +117,32 @@ CODEBUILD_WEBHOOK_HEAD_REF:         refs/heads/master
 CODEBUILD_WEBHOOK_TRIGGER:          branch/master
 HOME:                               /root
 ```
+
+## githubで新しいリリースを作成した時(0.0.1タグ)
+```text
+AWS_DEFAULT_REGION:                 ap-northeast-1
+AWS_REGION:                         ap-northeast-1
+CODEBUILD_BATCH_BUILD_IDENTIFIER:   
+CODEBUILD_BUILD_ARN:                arn:aws:codebuild:ap-northeast-1:085041388644:build/codebuild:d9d41907-4fde-429c-b06d-4e14dade1dfb
+CODEBUILD_BUILD_ID:                 codebuild:d9d41907-4fde-429c-b06d-4e14dade1dfb
+CODEBUILD_BUILD_IMAGE:              aws/codebuild/standard:5.0
+CODEBUILD_BUILD_NUMBER:             13
+CODEBUILD_BUILD_SUCCEEDING:         1
+CODEBUILD_INITIATOR:                GitHub-Hookshot/1c6af21
+CODEBUILD_KMS_KEY_ID:               arn:aws:kms:ap-northeast-1:085041388644:alias/aws/s3
+CODEBUILD_LOG_PATH:                 d9d41907-4fde-429c-b06d-4e14dade1dfb
+CODEBUILD_PUBLIC_BUILD_URL:         https://ap-northeast-1.codebuild.aws.amazon.com/project/eyJlbmNyeXB0ZWREYXRhIjoiSVlBb0dpNlEyYVBOZEhRTjJtazFDYTFYZVZualpXeS96R3FrODM1T1JtQXF5Z0l0UWFKV2pZMjA0UnlUTW44cm9WbWQxOEE2dStBdEsxQWtpL1FZcVVRQkl1SVlMQitjR1AvVFI3Zjh1UT09IiwiaXZQYXJhbWV0ZXJTcGVjIjoiMU1EWmVYZHVCaTI0dExPMyIsIm1hdGVyaWFsU2V0U2VyaWFsIjoxfQ%3D%3D/build/d9d41907-4fde-429c-b06d-4e14dade1dfb
+CODEBUILD_RESOLVED_SOURCE_VERSION:  ad8869229df27c8daf89f8c74fc33aec575978db
+CODEBUILD_SOURCE_REPO_URL:          https://github.com/mocaberos/codebuild.git
+CODEBUILD_SOURCE_VERSION:           ad8869229df27c8daf89f8c74fc33aec575978db
+CODEBUILD_SRC_DIR:                  /codebuild/output/src244870488/src/github.com/mocaberos/codebuild
+CODEBUILD_START_TIME:               1633093122757
+CODEBUILD_WEBHOOK_ACTOR_ACCOUNT_ID: 88621008
+CODEBUILD_WEBHOOK_BASE_REF:         
+CODEBUILD_WEBHOOK_EVENT:            PUSH
+CODEBUILD_WEBHOOK_MERGE_COMMIT:     
+CODEBUILD_WEBHOOK_PREV_COMMIT:      0000000000000000000000000000000000000000
+CODEBUILD_WEBHOOK_HEAD_REF:         refs/tags/0.0.1
+CODEBUILD_WEBHOOK_TRIGGER:          tag/0.0.1
+HOME:                               /root
+```
