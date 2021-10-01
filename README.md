@@ -1,1 +1,3 @@
 # CodeBuild動作確認用プロジェクト
+
+[![Build Status](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicWQ5eWpKUWF6RzhOWlVCNWw2d2FUUU1ITUVyandmakJNU2oxbTNzRnhzOFltaUhWdGNMTG5FS0VVd1dLZS8yZS9iQUFJZ1pvNjYzbXRxdGE1cytxNUIwPSIsIml2UGFyYW1ldGVyU3BlYyI6IldxY3NJZWlOL2IyT2RSUEkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)](https://ap-northeast-1.console.aws.amazon.com/codesuite/codebuild/projects/codebuild)
