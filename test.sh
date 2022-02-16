@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-
-exit 1;
+set -eu;
+exit 2;
