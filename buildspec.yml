@@ -6,6 +6,11 @@ phases:
       - |
         echo 'install';
         ./test.sh;
+        echo 'install';
+        ./test.sh;
+        echo 'install';
+        ./test.sh;
+        echo 'install';
   pre_build:
     commands:
       - |
