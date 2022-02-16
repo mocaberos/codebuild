@@ -4,25 +4,28 @@ phases:
   install:
     commands:
       - |
+        set -eu;
         echo 'install';
-        ./test.sh;
-        echo 'install';
-        ./test.sh;
-        echo 'install';
-        ./test.sh;
-        echo 'install';
+        if ! ./test.sh; then
+          echo '失敗';
+          exit 1;
+        fi
   pre_build:
     commands:
       - |
+        set -eu;
         echo 'pre_build';
         ./test.sh;
   build:
     commands:
       - |
+        set -eu;
         echo 'build';
         ./test.sh;
   post_build:
     commands:
       - |
+        set -eu;
         echo 'post_build';
         ./test.sh;
+
