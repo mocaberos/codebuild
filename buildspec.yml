@@ -2,27 +2,30 @@ version: 0.2
 
 phases:
   install:
+    on-failure: CONTINUE
     commands:
       - |
         set -eu;
         echo 'install';
         ./test.sh;
   pre_build:
+    on-failure: CONTINUE
     commands:
       - |
         set -eu;
         echo 'pre_build';
         ./test.sh;
   build:
+    on-failure: CONTINUE
     commands:
       - |
         set -eu;
         echo 'build';
         ./test.sh;
   post_build:
+    on-failure: CONTINUE
     commands:
       - |
         set -eu;
         echo 'post_build';
         ./test.sh;
-
