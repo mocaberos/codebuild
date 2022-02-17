@@ -1,6 +1,6 @@
 # CodeBuild動作確認用プロジェクト
 
-[![Build Status](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoicWQ5eWpKUWF6RzhOWlVCNWw2d2FUUU1ITUVyandmakJNU2oxbTNzRnhzOFltaUhWdGNMTG5FS0VVd1dLZS8yZS9iQUFJZ1pvNjYzbXRxdGE1cytxNUIwPSIsIml2UGFyYW1ldGVyU3BlYyI6IldxY3NJZWlOL2IyT2RSUEkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)](https://ap-northeast-1.console.aws.amazon.com/codesuite/codebuild/projects/codebuild)
+[![Build Status](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiL2JucnF5TzV6ZmJxditxSkdtT2RFbERYRjRUdHpDTmRFWFQxQXVYK0F3Z2N5RnhId3IyVitFamNMZzZWNlRpZGlaRjVwNDJFSkcvL01HL09Iak4vUi9ZPSIsIml2UGFyYW1ldGVyU3BlYyI6IkpHMGFvNTByQVVHQ1RnQkEiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)](https://ap-northeast-1.console.aws.amazon.com/codesuite/codebuild/projects/codebuild)
 
 ### AWS CodeBuildで状況に応じて処理を分けるため、いろんな場合の環境変数を細かく調査した
 https://qiita.com/mocaberos/items/ebd77d5b8b0952e8bdf9
@@ -153,3 +153,116 @@ CODEBUILD_WEBHOOK_TRIGGER:          tag/0.0.1
 HOME:                               /root
 ```
 
+### CodeBuildフェーズ遷移
+https://docs.aws.amazon.com/ja_jp/codebuild/latest/userguide/view-build-details.html#view-build-details-phases
+![遷移図](https://github.com/mocaberos/codebuild/blob/master/images/build-phases.png)
+
+### buildspec.yml構文
+https://docs.aws.amazon.com/ja_jp/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-syntax
+```
+version: 0.2
+
+run-as: Linux-user-name
+
+env:
+  shell: shell-tag
+  variables:
+    key: "value"
+    key: "value"
+  parameter-store:
+    key: "value"
+    key: "value"
+  exported-variables:
+    - variable
+    - variable
+  secrets-manager:
+    key: secret-id:json-key:version-stage:version-id
+  git-credential-helper: no | yes
+
+proxy:
+  upload-artifacts: no | yes
+  logs: no | yes
+
+batch:
+  fast-fail: false | true
+  # build-list:
+  # build-matrix:
+  # build-graph:
+        
+phases:
+  install:
+    run-as: Linux-user-name
+    on-failure: ABORT | CONTINUE
+    runtime-versions:
+      runtime: version
+      runtime: version
+    commands:
+      - command
+      - command
+    finally:
+      - command
+      - command
+  pre_build:
+    run-as: Linux-user-name
+    on-failure: ABORT | CONTINUE
+    commands:
+      - command
+      - command
+    finally:
+      - command
+      - command
+  build:
+    run-as: Linux-user-name
+    on-failure: ABORT | CONTINUE
+    commands:
+      - command
+      - command
+    finally:
+      - command
+      - command
+  post_build:
+    run-as: Linux-user-name
+    on-failure: ABORT | CONTINUE
+    commands:
+      - command
+      - command
+    finally:
+      - command
+      - command
+reports:
+  report-group-name-or-arn:
+    files:
+      - location
+      - location
+    base-directory: location
+    discard-paths: no | yes
+    file-format: report-format
+artifacts:
+  files:
+    - location
+    - location
+  name: artifact-name
+  discard-paths: no | yes
+  base-directory: location
+  exclude-paths: excluded paths
+  enable-symlinks: no | yes
+  s3-prefix: prefix
+  secondary-artifacts:
+    artifactIdentifier:
+      files:
+        - location
+        - location
+      name: secondary-artifact-name
+      discard-paths: no | yes
+      base-directory: location
+    artifactIdentifier:
+      files:
+        - location
+        - location
+      discard-paths: no | yes
+      base-directory: location
+cache:
+  paths:
+    - path
+    - path
+```
