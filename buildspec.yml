@@ -6,7 +6,7 @@ phases:
       - |
         set -eu;
         echo 'install';
-        echo "*[失敗]* <!here> ${UPG-Service} <${CODEBUILD_SOURCE_REPO_URL:0:-4}/pull${CODEBUILD_WEBHOOK_TRIGGER:2}|PR #${CODEBUILD_WEBHOOK_TRIGGER:2}> のテストが失敗しました:man-gesturing-no:\nテスト結果：`result-url ${UPG-Service}`";
+        echo "*[失敗]* <!here> UPG-Service <${CODEBUILD_SOURCE_REPO_URL:0:-4}/pull${CODEBUILD_WEBHOOK_TRIGGER:2}|PR #${CODEBUILD_WEBHOOK_TRIGGER:2}> のテストが失敗しました:man-gesturing-no:\nテスト結果：`result-url UPG-Service`";
   pre_build:
     commands:
       - |
