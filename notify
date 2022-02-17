@@ -1,8 +1,0 @@
-#!/bin/bash
-set -e;
-
-MESSAGE="${1}";
-
-if [ "${SLACK_WEBHOOK_URL}" != "" ]; then
-  curl -X POST --data-urlencode "payload={\"text\":\"${MESSAGE}\"}" "${SLACK_WEBHOOK_URL}"
-fi;
